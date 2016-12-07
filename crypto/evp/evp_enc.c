@@ -225,7 +225,7 @@ int EVP_CipherFinal(EVP_CIPHER_CTX *ctx, unsigned char *out, int *outl)
     if (ctx->encrypt)
         return EVP_EncryptFinal(ctx, out, outl);
     else{
-	printf("TESTMESSAGE\n");
+	printf("\nCIPHER_FINAL TESTMESSAGE\n");
         return EVP_DecryptFinal(ctx, out, outl);
     }
 }
