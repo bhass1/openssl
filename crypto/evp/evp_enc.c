@@ -215,16 +215,19 @@ int EVP_CipherFinal_ex(EVP_CIPHER_CTX *ctx, unsigned char *out, int *outl)
 {
     if (ctx->encrypt)
         return EVP_EncryptFinal_ex(ctx, out, outl);
-    else
+    else {
         return EVP_DecryptFinal_ex(ctx, out, outl);
+    }
 }
 
 int EVP_CipherFinal(EVP_CIPHER_CTX *ctx, unsigned char *out, int *outl)
 {
     if (ctx->encrypt)
         return EVP_EncryptFinal(ctx, out, outl);
-    else
+    else{
+	printf("TESTMESSAGE\n");
         return EVP_DecryptFinal(ctx, out, outl);
+    }
 }
 
 int EVP_EncryptInit(EVP_CIPHER_CTX *ctx, const EVP_CIPHER *cipher,
